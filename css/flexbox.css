@@ -29,16 +29,24 @@ h1 {
     text-align: center;
 }
 
-/*------------ Flexbox ------------*/
+/*------------ Flexbox --------------*/
 .contenedor {
     border: 2px solid var(--color-acento);
     padding: 16px;
-    width: 1250px;
+    /* width: 1250px; */
+    /* height: 2500px; */
     margin: 0 auto;
+
+    display: flex;
+    gap: 16px;
+    /*flex-wrap: wrap;*/   
 }
 
 .item {
-    width: 350px;
+    /*width: 150px;*/
+    flex-shrink: 0;/*controla cuando los elementos cambian de tamaño-achican-significan que se agrandan proporcionalmente*/
+    flex-grow: 1;/*controla el crecimiento del elemento*/
+    flex-basis: 150px;/*define el tamaño inicial-para poner un limite al contenedor.*/
     padding: 16px;
 
     background-color: var(--color-acento);
@@ -47,16 +55,38 @@ h1 {
     font-weight: 400;
     color: var(--color-negro);
     text-align: center;
+
 }
 
 .item-1 {
-    height: 150px;
+    order: 2;
 }
 
 .item-2 {
-    height: 250px;
+    order: 3;
+
 }
 
 .item-3 {
-    height: 350px;
+    order: 1;
+}
+.item-4 {
+    order: 5;
+}
+.item-5 {
+    order: 4;
+}
+
+
+
+ul {
+    display: flex;
+    gap: 64px;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+.busqueda {
+    display: flex;
 }

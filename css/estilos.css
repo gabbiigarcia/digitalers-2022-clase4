@@ -31,15 +31,15 @@ h1 {
 }
 
 h2 {
-    margin: 8px 0;
+    margin: 0;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 h3 {
-    margin: 8px 0;
+    margin:0;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 
@@ -47,7 +47,16 @@ h3 {
 header {
     background-color: var(--color-negro);
     border-bottom: 4px solid var(--color-acento); /* Grosor Estilo Color */
-    padding: 32px;
+    padding: 32px 0;/*32px arriba y 0 a los costados*/
+
+    
+}
+.contenedor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1250px;
+    margin: 0 auto;
 }
 
 .lista-header {
@@ -82,11 +91,41 @@ a.nav:hover {
 a.nav:active {
     color: var(--color-acento);
 }
+/*Formulario de busqueda*//**/
+.busqueda{
+    display: flex;/*elimina la distancia entre los botones*/
+    justify-content: center;/*todos los elementos se centran*/
+}
+.busqueda input,
+.busqueda button{
+    height: 50px;/*mismo alto al boton y al input*/
+    padding: 5px 12px;/*para que el texto no quede pegado al borde cuando se busca*/
+    outline: none;
+    border: none;/*esto hace que queden pegados sin lineas en el medio tanto el boton como el input*/
+}
+
+.busqueda img{
+    width: 35px;
+}
+.busqueda input{
+    border-radius: 16px 0 0 16px;
+    border: 2px solid var(--color-marron-100);
+    border-right: none;
+}
+.busqueda button{
+    border-radius: 0 16px 16px 0;
+    background-color: var(--color-acento);
+    border: 2px solid var(--color-acento);
+}
+.busqueda input:focus{
+    border: 2px solid var(--color-acento);
+    border-right: none;/*para que no varie el tamaño cuando haces click*/
+}
 
 
 /* ---- Sección Bienvenida ---- */
 #bienvenida {
-    width: 800px;
+    width: 1250px;
     height: 500px;
     margin: 0 auto;
     padding: 1px;
@@ -105,9 +144,50 @@ a.nav:active {
 
 /* ---- Sección Novedades ---- */
 #novedades {
+    width: 1250px;
+    margin: 0 auto;
     
 }
+.contenedor-novedades{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
+article{
+    width: 247px;
+    display: flex;
+    flex-direction: column;/*esto los deja en columna centrada*/
+    justify-content: space-between;/*esto reparte el espacio para que quede parejo*/
+    gap: 5px;/*espacio vertical entre elementos de 5px*/
+}
+
+/*----- seccion sobre nosotros------*/
+#sobrenosotros {
+    width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;/*o flex end*/
+    align-items: center;
+    gap: 32px;
+
+}
+#sobrenosotros video{
+    width: 750px;
+}
+.direccion{
+
+    text-align: left;
+}
+
+#mapa iframe {
+    width: 1250px;
+    height: 650px;
+    border: none;
+    margin-top: 32px;
+
+}
 /* ---- Footer ---- */
 footer {
     background-color: #716A5C;
